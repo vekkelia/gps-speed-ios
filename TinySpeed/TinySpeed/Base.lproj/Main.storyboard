@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Speed View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SpeedViewController" customModule="TinySpeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQx-2l-Bts">
+                                <rect key="frame" x="156.5" y="221.5" width="63.5" height="107.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="90"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSa-y1-CAH">
+                                <rect key="frame" x="16" y="634" width="343" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI5-xH-gZs">
+                                <rect key="frame" x="177" y="329" width="23" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="lSa-y1-CAH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="L1W-FU-xvg"/>
+                            <constraint firstItem="aI5-xH-gZs" firstAttribute="top" secondItem="wQx-2l-Bts" secondAttribute="bottom" id="QzD-QD-Tig"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lSa-y1-CAH" secondAttribute="bottom" constant="16" id="Vlk-AN-vQL"/>
+                            <constraint firstItem="aI5-xH-gZs" firstAttribute="centerX" secondItem="wQx-2l-Bts" secondAttribute="centerX" id="cfb-Lz-42M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lSa-y1-CAH" secondAttribute="trailing" constant="16" id="lTZ-5z-Fve"/>
+                            <constraint firstItem="wQx-2l-Bts" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.8" id="q8Q-6p-rfH"/>
+                            <constraint firstItem="wQx-2l-Bts" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zVY-bA-0aj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="706-SW-gHQ" appends="YES" id="ieV-ev-l7a"/>
+                            <outletCollection property="gestureRecognizers" destination="3Jc-c0-jJx" appends="YES" id="QgC-f8-u4N"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="labelAccuracy" destination="lSa-y1-CAH" id="RX6-Yj-ev1"/>
+                        <outlet property="labelSpeed" destination="wQx-2l-Bts" id="Jqw-WV-BUg"/>
+                        <outlet property="labelUnits" destination="aI5-xH-gZs" id="MGj-C8-emC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="3Jc-c0-jJx">
+                    <connections>
+                        <action selector="longPressHandler:" destination="BYZ-38-t0r" id="o24-Gf-bP0"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer cancelsTouchesInView="NO" numberOfTapsRequired="2" id="706-SW-gHQ">
+                    <connections>
+                        <action selector="doubleTapHandler:" destination="BYZ-38-t0r" id="SLf-5N-Txh"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>
